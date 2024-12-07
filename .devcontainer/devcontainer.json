@@ -1,0 +1,69 @@
+{
+  "name": "Playwright",
+  "dockerComposeFile": "compose.yaml",
+  "service": "playwright",
+  "workspaceFolder": "/workspaces",
+  "forwardPorts": [3838],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "ms-vscode-remote.remote-containers",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "njpwerner.autodocstring",
+        "mosapride.zenkaku",
+        "streetsidesoftware.code-spell-checker",
+        "GrapeCity.gc-excelviewer",
+        "emeraldwalk.runonsave",
+        "natqe.reload",
+        "oderwat.indent-rainbow",
+        "eamodio.gitlens",
+        "mhutchie.git-graph"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "always"
+        },
+        "eslint.validate": ["javascript", "typescript"],
+        "eslint.options": {
+          "extensions": [".js", ".ts"]
+        },
+        "eslint.format.enable": true,
+        "eslint.run": "onSave",
+        "prettier.singleQuote": true,
+        "prettier.trailingComma": "all",
+        "prettier.arrowParens": "always",
+        "prettier.jsxSingleQuote": true,
+        "prettier.printWidth": 120,
+        "prettier.tabWidth": 2,
+        "prettier.useTabs": false,
+        "prettier.endOfLine": "lf",
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.wordWrap": "on",
+        "editor.minimap.enabled": false,
+        "editor.renderWhitespace": "all",
+        "editor.renderControlCharacters": true,
+        "editor.renderIndentGuides": true,
+        "editor.renderLineHighlight": "all",
+        "editor.renderFinalNewline": "dimmed",
+        "editor.cursorStyle": "line",
+        "editor.cursorWidth": 2
+      }
+    }
+  },
+  "remoteUser": "pwuser",
+  "runArgs": ["-u", "pwuser", "--ipc", "host"], // https://playwright.dev/docs/ci#docker
+  "postCreateCommand": "yarn config set --home enableTelemetry 0 && yarn"
+}

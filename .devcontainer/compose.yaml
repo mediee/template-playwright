@@ -1,0 +1,27 @@
+services:
+  playwright:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces
+    environment:
+      NODE_ENV: development
+    ports:
+      - "3838:3838"
+    user: "pwuser"
+    security_opt:
+      - seccomp=seccomp_profile.json
+
+    # Uncomment the following section if you want to use a PostgreSQL database
+    # depends_on:
+    #   - postgres
+
+  # postgres:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_PASSWORD: postgres
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - ../.docker/postgresql/volumes:/var/lib/postgresql
