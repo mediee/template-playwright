@@ -206,6 +206,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playwright/test@npm:^1.49.0":
+  version: 1.49.0
+  resolution: "@playwright/test@npm:1.49.0"
+  dependencies:
+    playwright: "npm:1.49.0"
+  bin:
+    playwright: cli.js
+  checksum: 10c0/2890d52ee45bd83b5501f17a77c77f12ba934d257fda4b288405c6d91f94b83c4fcbdff3c0be89c2aaeea3d13576b72ec9a70be667ff844b342044afd72a246e
+  languageName: node
+  linkType: hard
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.11
   resolution: "@tsconfig/node10@npm:1.0.11"
@@ -1279,7 +1290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.49.0":
+"playwright@npm:1.49.0, playwright@npm:^1.49.0":
   version: 1.49.0
   resolution: "playwright@npm:1.49.0"
   dependencies:
@@ -1298,6 +1309,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "playwright@workspace:."
   dependencies:
+    "@playwright/test": "npm:^1.49.0"
     "@types/node": "npm:^22.10.1"
     eslint: "npm:^9.16.0"
     playwright: "npm:^1.49.0"

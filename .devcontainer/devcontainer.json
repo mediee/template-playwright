@@ -3,7 +3,6 @@
   "dockerComposeFile": "compose.yaml",
   "service": "playwright",
   "workspaceFolder": "/workspaces",
-  "forwardPorts": [3838],
   "features": {
     "ghcr.io/devcontainers/features/common-utils": {}
   },
@@ -63,7 +62,8 @@
       }
     }
   },
+  "forwardPorts": [9323],
   "remoteUser": "pwuser",
-  "runArgs": ["-u", "pwuser", "--ipc", "host"], // https://playwright.dev/docs/ci#docker
+  "runArgs": ["-it", "--rm", "--ipc=host", "--net=host"],
   "postCreateCommand": "yarn config set --home enableTelemetry 0 && yarn"
 }

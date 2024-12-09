@@ -131,3 +131,7 @@ dist
 
 # Docker
 .docker
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
