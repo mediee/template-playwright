@@ -6,20 +6,19 @@ Template repository using Playwright and Devcontainer
 
 This repository is a template using **Playwright** and **Devcontainer**, allowing you to quickly and efficiently start projects for end-to-end testing or web scraping.
 
+### Notes
+
+This template is `headless` by default, meaning that the browser will not be visible when running the tests. If you want to see the browser, you should add settings for X11 to the container.
+
 ## Features
 
 - Utilize a powerful test framework with **Playwright**
 - Type-safe coding with **TypeScript**
-- Consistent development environment provided by **Devcontainer**
-- Improved development efficiency with **VSCode customizations**
 - **Yarn v4** is used as the package manager
-- **Linters and formatters** like Prettier are set up by default in the devcontainer
-
-## Prerequisites
-
-- Install [Git](https://git-scm.com/)
-- Install [Visual Studio Code](https://code.visualstudio.com/) and the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- Install [Docker](https://www.docker.com/)
+- Consistent development environment provided by **Devcontainer**
+  - Using playwright official docker image: `mcr.microsoft.com/playwright:v1.49.0-jammy`
+  - **ESLint** and **Prettier** for code linting and formatting
+  - Further more information, please refer to the `extensions` section in `.devcontainer/devcontainer.json`
 
 ## Setup
 
@@ -44,7 +43,7 @@ code .
 
 ## Usage
 
-- Run the tests:
+- Run the tests (headless mode only):
 
 ```bash
 yarn test
