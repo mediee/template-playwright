@@ -3,7 +3,8 @@
   "description": "Playwright template with TS and yarn v4 for E2E testing and web scraping",
   "packageManager": "yarn@4.5.3",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:report": "playwright show-report --host 0.0.0.0 --port 9323"
   },
   "dependencies": {
     "playwright": "^1.49.0",
